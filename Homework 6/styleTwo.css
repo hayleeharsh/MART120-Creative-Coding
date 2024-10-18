@@ -1,0 +1,33 @@
+body.secondPage {
+    background-image:url(ketchup.jpg)
+}
+
+.titleColor{
+    color:darkred;
+    background-color:darksalmon;
+    font-size: 32px;
+    align-items: center;
+}
+
+span.titleColor{
+    color:darkred;
+    background-color:darksalmon;
+    font-size: 32px;
+    align-items: center;
+}
+
+.greenColor {
+    color: rgb(25, 84, 43);
+    background-color: rgb(255, 255, 255);
+    font-family: arial;
+    font-size: 18px;
+  }
+  
+
+span.greenColor{
+    color:rgb(25, 84, 43);
+    background-color: rgb(255, 255, 255);
+    font-family:arial;
+    font-size: 18px;
+}
+
