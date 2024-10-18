@@ -1,0 +1,107 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Contact Us</title>
+    <style>
+        span {
+            font-style: italic;
+            font-size: 13px;
+        }
+        .error {
+            background-color: #f8d7da; 
+            border-color: #f5c6cb; 
+        }
+    </style>
+    <script>
+        function checkboxes(event) {
+            var firstName = document.getElementById("fName").value;
+            var lastName = document.getElementById("lName").value;
+            var email = document.getElementById("email").value;
+            var isValid = true; 
+
+            document.getElementById("fNameMessage").innerHTML = "";
+            document.getElementById("lNameMessage").innerHTML = "";
+            document.getElementById("emailMessage").innerHTML = "";
+
+          
+            if (firstName.trim() === "") {
+                document.getElementById("fName").focus();
+                document.getElementById("fName").classList.add("error");
+                document.getElementById("fNameMessage").innerHTML = "* Required";
+                isValid = false; 
+            } else {
+                document.getElementById("fName").classList.remove("error");
+            }
+
+           
+            if (lastName.trim() === "") {
+                document.getElementById("lName").focus();
+                document.getElementById("lName").classList.add("error");
+                document.getElementById("lNameMessage").innerHTML = "* Required";
+                isValid = false; 
+            } else {
+                document.getElementById("lName").classList.remove("error");
+            }
+
+
+            if (email.trim() === "") {
+                document.getElementById("email").focus();
+                document.getElementById("email").classList.add("error");
+                document.getElementById("emailMessage").innerHTML = "* Required";
+                isValid = false; 
+                document.getElementById("email").classList.remove("error");
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        }
+    </script>
+</head>   
+<body>
+    <h1>Contact Us</h1>
+    <form id="myForm" action="fourthpage.html" method="post" onsubmit="checkboxes(event)">
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td>
+                    <input type="text" id="fName">
+                    <span id="fNameMessage" style="color:red;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td>
+                    <input type="text" id="lName">
+                    <span id="lNameMessage" style="color:red;"></span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="text" id="email">
+                    <span id="emailMessage" style="color:red;"></span>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <p><span>Accept the Terms and Conditions to Continue</span></p>
+        
+        <input type="radio" id="accept" name="terms" value="yes" required>
+        <label for="accept">Yes</label><br>
+        
+        <input type="radio" id="decline" name="terms" value="no">
+        <label for="decline">No</label><br>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+    <div id="finalResult"></div>
+    <br><br>
+    <h3><a href="secondpage.html"><span>Go back to second page</span></a></h3>
+    <h3><a href="firstpage.html"><span>Return to homepage</span></a></h3>
+
+</body>
+</html>
